@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: 0ms;
+        }
+
+        body {
+            display: flex;
+            background-color: white;
+        }
+
+        section {
+            margin: 15px;
+            width: 100%;
+        }
+
+        .card {
+            width: 100%;
+            height: fit-content;
+        }
+
+        .card-body-left {
+            width: 30%;
+            padding-right: 15px;
+        }
+
+        .card-body-right {
+            width: 100%;
+            padding: 0 15px 5px;
+        }
+
+        .card .card-body-right h2 {
+            padding-left: 15px;
+        }
+
+        .img-thumbnail {
+            width: 300px;
+            max-width: 300px;
+            height: 300px;
+            max-height: 300px;
+        }
+
+        footer p {
+            font-size: small;
+            align-items: center;
+            text-align: center;
+        }
+
+        input#floatingPlaintextInput.form-control-plaintext {
+            font-weight: 600;
+            font-size: large;
+        }
+
+        .card .h-100 img {
+            height: 100%;
+            width: auto;
+        }
+
+        .card .h-100 .card-img-overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+            opacity: 0;
+        }
+
+        .card .h-100:hover .card-img-overlay {
+            opacity: 1;
+        }
+
+        .card-header {
+            font-size: large;
+            font-weight: 650;
+            padding: 5px 15px;
+            text-transform: uppercase;
+        }
+    </style>
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+        nav {
+            width: 80px;
+            height: 100vh;
+            max-height: 100vh;
+            background-color: white;
+            box-shadow: 5px 0 15px #6b5c49;
+            overflow-x: hidden;
+            position: sticky;
+            position: -webkit-sticky;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+
+        nav:hover {
+            width: 300px;
+        }
+
+        hr {
+            background-color: #3a332a;
+            height: 3px;
+            border: 2px solid #3a332a;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #6b5c49af;
+            border-radius: 25px;
+            color: white;
+        }
+
+        .nav-pills a.nav-link.active span {
+            font-weight: 650;
+        }
+
+        .dropdown .d-flex,
+        .nav-item a.nav-link {
+            color: black;
+        }
+
+        .dropdown .d-flex:hover,
+        .nav-item a.nav-link:not(.active):hover {
+            color: #FD631B;
+        }
+
+        a span {
+            font-size: 20px;
+            font-weight: 600;
+            padding-left: 25px;
+        }
+
+        a strong {
+            padding-left: 25px;
+        }
+
+        footer {
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-placeholder">
+        <div class="d-flex flex-column flex-shrink-0 p-3" style="height:95vh;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none  fs-4">
+                <img src="https://img.freepik.com/free-photo/tender-feminine-woman-with-blue-eyes-smiles-pleasantly-has-toothy-smile-wears-white-comfortable-sweater-looks-directly-camera-isolated-pink-background_273609-32160.jpg?w=740&t=st=1666713789~exp=1666714389~hmac=4fef17cccc9b124266c9f2edfd373d43fe0d9350da2368e8390f8d2d3e8b3866"
+                    alt="" width="50" height="50" class="rounded-circle me-0">
+                <strong>Username</strong>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active d-flex align-items-center " aria-current="page">
+                        <i class="bi bi-grid-1x2 fs-4"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-images fs-4"></i>
+                        <span>Photos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-person-circle fs-4"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none fs-4 p-sm-3" aria-expanded="false">
+                    <i class="bi bi-box-arrow-right fs-4"></i>
+                    <strong>Logout</strong>
+                </a>
+            </div>
+        </div>
+        <footer class="d-flex align-i p-2" style="height: 5vh;">
+            <p class="text-center text-muted">&copy; 2022</p>
+        </footer>
+    </nav>
+
+    <section>
+        <div class="card text-bg-light mb-2">
+            <div class="card-header">Profile</div>
+            <div class="card-body" style="display: flex;">
+                <div class="card-body-left">
+                    <img src="https://img.freepik.com/free-photo/kitty-with-monochrome-wall-her_23-2148955134.jpg?w=360&t=st=1666882238~exp=1666882838~hmac=2d9f55402e3a506c098c5ae5338da37db5c1dee30506112ef7cef86ed5e4097d"
+                        sizes="cover" class="img-thumbnail">
+                </div>
+                <div class="card-body-right">
+                    <div>
+                        <h2>username</h2>
+                    </div>
+                    <div class="row g-2">
+                        <div class="form-floating mb-3">
+                            <input type="text" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                value="Lorem Ipsun Doe">
+                            <label for="floatingPlaintextInput">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                                value="name@example.com">
+                            <label for="floatingPlaintextInput">Email</label>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-sm">
+                                <div class="form-floating mb-3">
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        id="floatingPlaintextInput" value="+6285712349876">
+                                    <label for="floatingPlaintextInput">Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="form-floating mb-3">
+                                    <input type="text" readonly class="form-control-plaintext"
+                                        id="floatingPlaintextInput" value="Indonesia">
+                                    <label for="floatingPlaintextInput">Country</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-bg-light mb-3">
+                <div class="card-header">Photos</div>
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://img.freepik.com/free-photo/tender-feminine-woman-with-blue-eyes-smiles-pleasantly-has-toothy-smile-wears-white-comfortable-sweater-looks-directly-camera-isolated-pink-background_273609-32160.jpg?w=740&t=st=1666713789~exp=1666714389~hmac=4fef17cccc9b124266c9f2edfd373d43fe0d9350da2368e8390f8d2d3e8b3866"
+                                    class="card-img-top" alt="...">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=826&t=st=1666881396~exp=1666881996~hmac=98064a899e2a6114fece28353c4614613b75331e2abc37d8f16b9f46e70be769"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body card-img-overlay">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This card has supporting text below as a natural lead-in to
+                                        additional content.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="https://img.freepik.com/free-photo/closeup-shot-one-ginger-cat-hugging-licking-other-isolated-white-wall_181624-32893.jpg?w=740&t=st=1666881576~exp=1666882176~hmac=0e360203a589cdf9a7241bea29acf134d644020375c24f4920ca6c396d741390"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body card-img-overlay">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This card has even longer content than the first
+                                        to
+                                        show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="sidebars.js"></script>
+</body>
+
+</html>

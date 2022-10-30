@@ -1,0 +1,58 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+nav #nav-placeholder{
+    width: 80px;
+    height: 100vh;
+    max-height: 100vh;
+    background-color: white;
+    box-shadow: 5px 0 15px #6b5c49;
+    overflow-x: hidden;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+nav:hover  #nav-placeholder{
+    width: 250px;
+}
+
+hr {
+    background-color: #3a332a;
+    height: 3px;
+    border: 2px solid #3a332a;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #6b5c49af;
+    border-radius: 25px;
+    color: white;
+}
+
+.nav-pills a.nav-link.active span {
+    font-weight: 650;
+}
+.dropdown .d-flex,
+.nav-item a.nav-link{
+    color: black;
+}
+.dropdown .d-flex:hover,
+.nav-item a.nav-link:not(.active):hover{
+    color: #FD631B;
+}
+
+a span {
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 25px;
+}
+
+a strong {
+    padding-left: 25px;
+}
+
+footer{
+    bottom: 0;
+    left: 0;
+}
